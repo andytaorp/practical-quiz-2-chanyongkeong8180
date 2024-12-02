@@ -1,9 +1,17 @@
 import React from "react";
 
-/**
- * Habit component that displays a habit, allows the user to toggle
- * the habit's completed state, and delete the habit.
- *
- * TODO: implement the Habit component here
- */
-export default function Habit() {}
+export default function Habit({habit, onToggleHabit, onDeleteHabit}) {
+    return (
+        <div>
+          <li>
+          <input 
+          type="checkbox"
+          value={habit.checked}
+          onChange={()=> onToggleHabit(habit.id)}
+          />
+          <span style= {habit.checked ? { textDecoration: "line-through" } : {}}>{habit.name}</span>
+          </li>
+          <button onClick={() => onDeleteHabit(habit.id)}>Delete</button>
+        </div>
+    );
+}
