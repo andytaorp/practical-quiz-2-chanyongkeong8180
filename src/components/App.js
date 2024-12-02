@@ -28,8 +28,8 @@ function App() {
       <AddHabitForm onAddHabit={handleAddHabit}/>
       <HabitList 
       habits={habits}
-      handleDeleteHabit={handleDeleteHabit}
-      handleToggleHabit={handleToggleHabit}/>
+      onDeleteHabit={handleDeleteHabit}
+      onToggleHabit={handleToggleHabit}/>
     </div>
   );
 }

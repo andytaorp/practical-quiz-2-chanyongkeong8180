@@ -1,17 +1,17 @@
 import React from "react";
 
-export default function Habit({habits, onToggleHabit, onDeleteHabit}) {
+export default function Habit({habit, onToggleHabit, onDeleteHabit}) {
     return (
-        <div style= {habits.checked ? { textDecoration: "line-through" } : {}}>
+        <div>
           <li>
           <input 
           type="checkbox"
-          value={habits.checked}
-          onChange={()=> onToggleHabit(habits.id)}
+          value={habit.checked}
+          onChange={()=> onToggleHabit(habit.id)}
           />
-          {habits.habitName}
+          <span style= {habit.checked ? { textDecoration: "line-through" } : {}}>{habit.name}</span>
           </li>
-          <button onClick={() => onDeleteHabit(habits.id)}>Delete</button>
+          <button onClick={() => onDeleteHabit(habit.id)}>Delete</button>
         </div>
-      );
+    );
 }
